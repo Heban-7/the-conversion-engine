@@ -1,85 +1,75 @@
 {
   "prospect_domain": "orrin-labs.example",
   "prospect_name": "Orrin Labs Inc.",
-  "generated_at": "2026-04-23T20:17:16.027925+00:00",
-  "primary_segment_match": "segment_4_specialized_capability",
-  "segment_confidence": 0.72,
+  "generated_at": "2026-04-23T20:35:12.889241+00:00",
+  "primary_segment_match": "abstain",
+  "segment_confidence": 0.55,
   "ai_maturity": {
-    "score": 2,
-    "confidence": 0.7,
+    "score": 0,
+    "confidence": 0.74,
     "justifications": [
       {
         "signal": "ai_adjacent_open_roles",
-        "status": "Two Data Platform Engineer roles and one ML Engineer role open on BuiltIn. 3 of 11 total engineering openings are AI-adjacent (27%).",
+        "status": "Detected 3 public engineering roles from Playwright scrape.",
         "weight": "high",
-        "confidence": "high",
-        "source_url": "https://builtin.com/company/orrin-labs/jobs"
+        "confidence": "low",
+        "source_url": "https://public-careers-pages"
       },
       {
         "signal": "named_ai_ml_leadership",
-        "status": "No public Head of AI, VP Data, or Chief Scientist on the team page. CTO holds a combined infrastructure-and-data remit.",
+        "status": "No public AI leadership signal found.",
         "weight": "high",
-        "confidence": "high",
-        "source_url": "https://orrin-labs.example/team"
+        "confidence": "low"
       },
       {
         "signal": "executive_commentary",
-        "status": "CEO blog post Feb 2026 mentions 'AI-powered insights' as a 2026 priority. No keynote or podcast appearances on AI strategy in the last 12 months.",
+        "status": "Using public press/blog scan as leadership-change proxy.",
         "weight": "medium",
-        "confidence": "medium",
-        "source_url": "https://orrin-labs.example/blog/2026-roadmap"
+        "confidence": "medium"
       },
       {
         "signal": "modern_data_ml_stack",
-        "status": "BuiltWith reports dbt and Snowflake in use. No Databricks, no Weights and Biases, no vLLM. Stack is modern-data but not ML-platform-modern.",
+        "status": "Stack inferred from role language only; not fully confirmed.",
         "weight": "low",
-        "confidence": "high",
-        "source_url": "https://builtwith.com/orrin-labs.example"
-      },
-      {
-        "signal": "github_org_activity",
-        "status": "Public GitHub org has 4 repos, all non-AI (developer tooling). Absence of AI repos is not proof of absence \u2014 AI work may be in private repos.",
-        "weight": "medium",
-        "confidence": "medium",
-        "source_url": "https://github.com/orrin-labs"
+        "confidence": "low"
       }
     ]
   },
   "hiring_velocity": {
-    "open_roles_today": 11,
-    "open_roles_60_days_ago": 4,
-    "velocity_label": "doubled",
-    "signal_confidence": 0.85,
+    "open_roles_today": 3,
+    "open_roles_60_days_ago": 2,
+    "velocity_label": "increased_modestly",
+    "signal_confidence": 0.4,
     "sources": [
-      "builtin",
-      "wellfound",
       "company_careers_page"
     ]
   },
   "buying_window_signals": {
     "funding_event": {
-      "detected": true,
-      "stage": "series_b",
-      "amount_usd": 14000000,
-      "closed_at": "2026-02-21",
-      "source_url": "https://www.crunchbase.com/funding_round/orrin-labs-series-b"
+      "detected": false,
+      "stage": "none",
+      "amount_usd": 0,
+      "closed_at": "2025-10-05",
+      "source_url": "https://github.com/luminati-io/Crunchbase-dataset-samples"
     },
     "layoff_event": {
-      "detected": false
+      "detected": false,
+      "date": "",
+      "headcount_reduction": 0,
+      "percentage_cut": 0,
+      "source_url": ""
     },
     "leadership_change": {
       "detected": false,
-      "started_at": "2026-03-24"
+      "role": "none",
+      "new_leader_name": "",
+      "started_at": "",
+      "source_url": ""
     }
   },
   "tech_stack": [
     "Python",
-    "PostgreSQL",
-    "dbt",
-    "Snowflake",
-    "AWS",
-    "React",
-    "TypeScript"
+    "Data"
   ],
   "bench_to_brief_match": {
     "required_stacks": [
@@ -92,42 +82,30 @@
   "data_sources_checked": [
     {
       "source": "crunchbase_odm",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:12:15Z"
+      "status": "error",
+      "fetched_at": "2026-04-23T20:35:10.689504+00:00",
+      "error_message": "404 Client Error: Not Found for url: https://raw.githubusercontent.com/luminati-io/Crunchbase-dataset-samples/master/organizations.csv"
+    },
+    {
+      "source": "job_posts_playwright",
+      "status": "error",
+      "fetched_at": "2026-04-23T20:35:11.819743+00:00",
+      "error_message": "No module named 'playwright'"
     },
     {
       "source": "layoffs_fyi",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:12:30Z"
+      "status": "error",
+      "fetched_at": "2026-04-23T20:35:11.821104+00:00",
+      "error_message": "404 Client Error: Not Found for url: https://raw.githubusercontent.com/factoredai/layoffs-data/main/layoffs.csv"
     },
     {
-      "source": "builtin_jobs",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:13:04Z"
-    },
-    {
-      "source": "wellfound_jobs",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:13:22Z"
-    },
-    {
-      "source": "linkedin_public_leadership",
-      "status": "partial",
-      "error_message": "Rate limit hit on third pagination call; first two pages parsed successfully.",
-      "fetched_at": "2026-04-22T08:13:40Z"
-    },
-    {
-      "source": "builtwith",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:14:12Z"
-    },
-    {
-      "source": "github_public_org",
-      "status": "success",
-      "fetched_at": "2026-04-22T08:14:35Z"
+      "source": "leadership_change_detection",
+      "status": "error",
+      "fetched_at": "2026-04-23T20:35:12.712155+00:00",
+      "error_message": "HTTPSConnectionPool(host='orrin-labs.example', port=443): Max retries exceeded with url: /blog (Caused by NameResolutionError(\"HTTPSConnection(host='orrin-labs.example', port=443): Failed to resolve 'orrin-labs.example' ([Errno 11001] getaddrinfo failed)\"))"
     }
   ],
   "honesty_flags": [
-    "tech_stack_inferred_not_confirmed"
+    "weak_hiring_velocity_signal"
   ]
 }

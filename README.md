@@ -64,6 +64,8 @@ Outputs:
   - `python -m agent.scripts.run_single_flow`
 - Run 20-interaction latency batch:
   - `python -m agent.scripts.run_latency_batch`
+- Start inbound webhook service (email + SMS):
+  - `uvicorn agent.webhooks:app --host 0.0.0.0 --port 8000`
 
 Outputs:
 - `artifacts/interim/single_prospect_flow/hiring_signal_brief.json`
@@ -94,6 +96,11 @@ Outputs:
   - weak hiring signal
   - bench mismatch
   - unsupported competitor-gap confidence
+- SMS warm-channel enforcement:
+  - SMS sends are blocked unless prior email engagement is recorded.
+- Webhook safety:
+  - malformed payloads and bad secrets return explicit 4xx responses.
+  - bounce and failure webhook types are mapped to concrete error events.
 
 ## Submission Mapping
 

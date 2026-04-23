@@ -11,8 +11,10 @@
       "data"
     ]
   },
-  "guardrail_allowed_without_flags": true,
-  "guardrail_reasons": [],
+  "guardrail_allowed_without_flags": false,
+  "guardrail_reasons": [
+    "weak_hiring_velocity_signal"
+  ],
   "tone_scorecard": {
     "direct": 4,
     "grounded": 4,
@@ -22,10 +24,10 @@
   },
   "events": [
     {
-      "correlation_id": "51689f12-91df-4e3b-9d97-65a04cf8b215",
+      "correlation_id": "d5ef7ea0-c967-4348-9a4c-8f653e2b4982",
       "channel": "email",
-      "event_type": "email_sent",
-      "timestamp": "2026-04-23T20:17:16.108136+00:00",
+      "event_type": "email_send_failed",
+      "timestamp": "2026-04-23T20:35:12.986071+00:00",
       "payload": {
         "provider": "resend",
         "from": "research-partner@gettenacious.com",
@@ -34,47 +36,50 @@
         "subject": "Request: 15-minute AI delivery context call",
         "headers": {
           "X-Tenacious-Status": "draft"
-        }
+        },
+        "error": "RESEND_API_KEY is required for resend provider"
       }
     },
     {
-      "correlation_id": "c9b81c6b-ea49-4833-a11e-0d862e233576",
+      "correlation_id": "bdaf3b70-aed9-48a1-9848-8b0279025005",
       "channel": "email",
       "event_type": "email_reply_received",
-      "timestamp": "2026-04-23T20:17:16.111468+00:00",
+      "timestamp": "2026-04-23T20:35:12.996691+00:00",
       "payload": {
         "from_email": "jordan@orrin-labs.example",
         "body": "Thanks. Email is good, but SMS for scheduling is faster."
       }
     },
     {
-      "correlation_id": "935277a8-2fe2-492b-a72c-7db97688774e",
+      "correlation_id": "ce5ffb87-dbdf-473b-a383-28789cc29fa9",
       "channel": "calcom",
       "event_type": "booking_link_generated",
-      "timestamp": "2026-04-23T20:17:16.112983+00:00",
+      "timestamp": "2026-04-23T20:35:13.001426+00:00",
       "payload": {
         "booking_link": "https://cal.example/orrin-labs.example/discovery-call"
       }
     },
     {
-      "correlation_id": "636c415a-f5e0-4301-94fb-819593179431",
+      "correlation_id": "8e7910cc-1127-4684-9105-2f6817b80a5e",
       "channel": "sms",
-      "event_type": "sms_sent",
-      "timestamp": "2026-04-23T20:17:16.114167+00:00",
+      "event_type": "sms_send_failed",
+      "timestamp": "2026-04-23T20:35:13.005170+00:00",
       "payload": {
         "to_original": "+251711000111",
         "to_routed": "+251700000000",
-        "body": "Jordan, sharing the booking link for the 15-minute discovery call: https://cal.example/orrin-labs.example/discovery-call"
+        "body": "Jordan, sharing the booking link for the 15-minute discovery call: https://cal.example/orrin-labs.example/discovery-call",
+        "username": "sandbox",
+        "error": "AFRICAS_TALKING_API_KEY is required"
       }
     },
     {
-      "correlation_id": "e47542f2-42ec-4fe0-ba81-d796804d2c5d",
+      "correlation_id": "36675693-2cc5-4963-b014-c7f3ecd86778",
       "channel": "calcom",
       "event_type": "booking_confirmed",
-      "timestamp": "2026-04-23T20:17:16.116140+00:00",
+      "timestamp": "2026-04-23T20:35:13.010772+00:00",
       "payload": {
         "booking_link": "https://cal.example/orrin-labs.example/discovery-call",
-        "timeslot_utc": "2026-04-26T20:17:16+00:00"
+        "timeslot_utc": "2026-04-26T20:35:13+00:00"
       }
     }
   ],

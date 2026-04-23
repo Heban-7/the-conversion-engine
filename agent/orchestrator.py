@@ -8,6 +8,7 @@ from typing import Any
 from agent.composer import compose_cold_email, compose_sms_for_scheduling
 from agent.config import Settings
 from agent.enrichment.pipeline import EnrichmentOutputs, generate_briefs
+from agent.events import EngagementStore, EventBus
 from agent.integrations.calcom import CalComClient
 from agent.integrations.email import EmailClient, EmailMessage
 from agent.integrations.hubspot import HubSpotClient
@@ -37,8 +38,11 @@ def run_single_prospect_flow(settings: Settings, prospect: Prospect, output_dir:
     logs_dir = output_dir / "logs"
     logs_dir.mkdir(parents=True, exist_ok=True)
 
-    email = EmailClient(settings, logs_dir / "email_events.jsonl")
-    sms = SmsClient(settings, logs_dir / "sms_events.jsonl")
+    event_bus = EventBus()
+    engagement_store = EngagementStore()
+
+    email = EmailClient(settings, logs_dir / "email_events.jsonl", event_bus=event_bus)
+    sms = SmsClient(settings, logs_dir / "sms_events.jsonl", event_bus=event_bus, engagement_store=engagement_store)
     hubspot = HubSpotClient(logs_dir / "hubspot_events.jsonl", output_dir / "hubspot_record_snapshot.json")
     calcom = CalComClient(logs_dir / "calcom_events.jsonl", output_dir / "cal_booking_snapshot.json")
     langfuse = LangfuseClient(logs_dir / "langfuse_traces.jsonl")
@@ -78,6 +82,7 @@ def run_single_prospect_flow(settings: Settings, prospect: Prospect, output_dir:
     hubspot.append_event(sent_email.correlation_id, "email_sent", {"subject": subject})
 
     reply = email.simulate_reply(prospect.contact_email, "Thanks. Email is good, but SMS for scheduling is faster.")
+    engagement_store.mark_email_reply(prospect.contact_email)
     langfuse.trace("email_reply", reply.correlation_id, {"intent": "wants_sms_scheduling"})
     hubspot.append_event(reply.correlation_id, "email_reply_received", {"channel_preference": "sms"})
 
@@ -85,7 +90,7 @@ def run_single_prospect_flow(settings: Settings, prospect: Prospect, output_dir:
     hubspot.append_event(booking_link_event.correlation_id, "booking_link_generated", {"booking_link": booking_link})
 
     sms_text = compose_sms_for_scheduling(first_name=prospect.contact_first_name, booking_link=booking_link)
-    sms_event = sms.send(prospect.contact_phone, sms_text)
+    sms_event = sms.send(prospect.contact_phone, sms_text, recipient_email=prospect.contact_email)
     langfuse.trace("sms_outbound", sms_event.correlation_id, {"message_preview": sms_text[:60]})
     hubspot.append_event(sms_event.correlation_id, "sms_sent", {"booking_link": booking_link})
 

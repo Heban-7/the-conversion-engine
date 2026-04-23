@@ -16,6 +16,12 @@ class Settings:
     outbound_sink_sms: str
     email_provider: str
     email_from: str
+    resend_api_key: str
+    mailersend_api_key: str
+    africas_talking_api_key: str
+    africas_talking_username: str
+    email_webhook_secret: str
+    sms_webhook_secret: str
 
 
 def _as_bool(value: str | None) -> bool:
@@ -41,4 +47,10 @@ def load_settings() -> Settings:
         outbound_sink_sms=os.getenv("TENACIOUS_OUTBOUND_SINK_SMS", "+251700000000"),
         email_provider=os.getenv("EMAIL_PROVIDER", "resend"),
         email_from=os.getenv("EMAIL_FROM", "research-partner@gettenacious.com"),
+        resend_api_key=os.getenv("RESEND_API_KEY", ""),
+        mailersend_api_key=os.getenv("MAILERSEND_API_KEY", ""),
+        africas_talking_api_key=os.getenv("AFRICAS_TALKING_API_KEY", ""),
+        africas_talking_username=os.getenv("AFRICAS_TALKING_USERNAME", "sandbox"),
+        email_webhook_secret=os.getenv("EMAIL_WEBHOOK_SECRET", ""),
+        sms_webhook_secret=os.getenv("SMS_WEBHOOK_SECRET", ""),
     )

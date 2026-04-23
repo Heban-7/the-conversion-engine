@@ -1,0 +1,87 @@
+{
+  "prospect": {
+    "domain": "orrin-labs.example",
+    "name": "Orrin Labs Inc.",
+    "contact_first_name": "Jordan",
+    "contact_email": "jordan@orrin-labs.example",
+    "contact_phone": "+251711000111",
+    "sector": "Business Intelligence / Analytics",
+    "required_stacks": [
+      "python",
+      "data"
+    ]
+  },
+  "guardrail_allowed_without_flags": true,
+  "guardrail_reasons": [],
+  "tone_scorecard": {
+    "direct": 4,
+    "grounded": 4,
+    "honest": 4,
+    "professional": 4,
+    "non_condescending": 4
+  },
+  "events": [
+    {
+      "correlation_id": "51689f12-91df-4e3b-9d97-65a04cf8b215",
+      "channel": "email",
+      "event_type": "email_sent",
+      "timestamp": "2026-04-23T20:17:16.108136+00:00",
+      "payload": {
+        "provider": "resend",
+        "from": "research-partner@gettenacious.com",
+        "to_original": "jordan@orrin-labs.example",
+        "to_routed": "staff-sink@trp1.example",
+        "subject": "Request: 15-minute AI delivery context call",
+        "headers": {
+          "X-Tenacious-Status": "draft"
+        }
+      }
+    },
+    {
+      "correlation_id": "c9b81c6b-ea49-4833-a11e-0d862e233576",
+      "channel": "email",
+      "event_type": "email_reply_received",
+      "timestamp": "2026-04-23T20:17:16.111468+00:00",
+      "payload": {
+        "from_email": "jordan@orrin-labs.example",
+        "body": "Thanks. Email is good, but SMS for scheduling is faster."
+      }
+    },
+    {
+      "correlation_id": "935277a8-2fe2-492b-a72c-7db97688774e",
+      "channel": "calcom",
+      "event_type": "booking_link_generated",
+      "timestamp": "2026-04-23T20:17:16.112983+00:00",
+      "payload": {
+        "booking_link": "https://cal.example/orrin-labs.example/discovery-call"
+      }
+    },
+    {
+      "correlation_id": "636c415a-f5e0-4301-94fb-819593179431",
+      "channel": "sms",
+      "event_type": "sms_sent",
+      "timestamp": "2026-04-23T20:17:16.114167+00:00",
+      "payload": {
+        "to_original": "+251711000111",
+        "to_routed": "+251700000000",
+        "body": "Jordan, sharing the booking link for the 15-minute discovery call: https://cal.example/orrin-labs.example/discovery-call"
+      }
+    },
+    {
+      "correlation_id": "e47542f2-42ec-4fe0-ba81-d796804d2c5d",
+      "channel": "calcom",
+      "event_type": "booking_confirmed",
+      "timestamp": "2026-04-23T20:17:16.116140+00:00",
+      "payload": {
+        "booking_link": "https://cal.example/orrin-labs.example/discovery-call",
+        "timeslot_utc": "2026-04-26T20:17:16+00:00"
+      }
+    }
+  ],
+  "artifacts": {
+    "hiring_signal_brief": "C:\\Users\\liulj\\Desktop\\10Acadamey\\week_10\\the-conversion-engine\\artifacts\\interim\\single_prospect_flow\\hiring_signal_brief.json",
+    "competitor_gap_brief": "C:\\Users\\liulj\\Desktop\\10Acadamey\\week_10\\the-conversion-engine\\artifacts\\interim\\single_prospect_flow\\competitor_gap_brief.json",
+    "hubspot_snapshot": "C:\\Users\\liulj\\Desktop\\10Acadamey\\week_10\\the-conversion-engine\\artifacts\\interim\\single_prospect_flow\\hubspot_record_snapshot.json",
+    "cal_snapshot": "C:\\Users\\liulj\\Desktop\\10Acadamey\\week_10\\the-conversion-engine\\artifacts\\interim\\single_prospect_flow\\cal_booking_snapshot.json"
+  }
+}

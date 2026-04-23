@@ -1,0 +1,15 @@
+{
+  "type": "hubspot_upsert_contact",
+  "timestamp": "2026-04-23T20:17:16.109394+00:00",
+  "payload": {
+    "email": "jordan@orrin-labs.example",
+    "firstname": "Jordan",
+    "company": "Orrin Labs Inc.",
+    "domain": "orrin-labs.example",
+    "segment": "segment_4_specialized_capability",
+    "segment_confidence": 0.72,
+    "ai_maturity_score": 2,
+    "tenacious_status": "draft",
+    "enrichment_generated_at": "2026-04-23T20:17:16.027925+00:00"
+  }
+}

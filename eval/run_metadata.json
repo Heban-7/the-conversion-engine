@@ -1,0 +1,4 @@
+{
+  "runner": "eval/run_tau2_wrapper.py",
+  "note": "Interim wrapper copies source benchmark artifacts and recomputes CI from raw traces."
+}

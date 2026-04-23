@@ -1,0 +1,6 @@
+{
+  "interaction_count": 20,
+  "p50_latency_seconds": 185.0,
+  "p95_latency_seconds": 336.65,
+  "mean_latency_seconds": 202
+}

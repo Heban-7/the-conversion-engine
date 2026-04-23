@@ -1,0 +1,11 @@
+[project]
+name = "the-conversion-engine"
+version = "0.1.0"
+description = "Week 10 conversion engine interim implementation"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.23.0",
+]
+
+[tool.setuptools]
+packages = ["agent"]

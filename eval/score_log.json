@@ -1,0 +1,16 @@
+{
+  "domain": "retail",
+  "source": "source_file/trace_log.jsonl",
+  "evaluated_simulations": 150,
+  "pass_at_1_empirical": 0.7267,
+  "pass_at_1_ci_95_empirical": [
+    0.6504,
+    0.7917
+  ],
+  "avg_agent_cost": 0.0199,
+  "p50_latency_seconds": 105.9521,
+  "p95_latency_seconds": 551.6491,
+  "num_trials": 5,
+  "total_tasks": 30,
+  "git_commit": "d11a97072c49d093f7b5a3e4fe9da95b490d43ba"
+}

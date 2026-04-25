@@ -1,0 +1,10 @@
+{
+  "generated_by": "eval/generate_final_eval_artifacts.py",
+  "mode": "placeholder_dev_simulation",
+  "conditions": [
+    "day1_baseline",
+    "auto_opt_baseline",
+    "our_method"
+  ],
+  "source_trace_path": "source_file/trace_log.jsonl"
+}

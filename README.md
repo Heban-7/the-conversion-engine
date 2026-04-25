@@ -2,9 +2,12 @@
 
 Automated lead generation and conversion system for Tenacious Consulting and Outsourcing.
 
-This repository contains the interim (Acts I and II) implementation:
-- Act I: reproducible tau2-bench baseline artifacts with CI/cost/latency.
-- Act II: production-stack skeleton with email-first outreach, SMS warm-lead scheduling fallback, HubSpot and Cal.com event flow, enrichment briefs, and observability traces.
+This repository now includes:
+- **Acts I-II** implementation artifacts (baseline + production stack).
+- **Acts III-V** final-submission structure (probes, method, ablation/evidence, final memo draft files).
+
+For the full beginner walkthrough, read:
+- `FULL_PROJECT_GUIDE.md`
 
 ## Architecture
 
@@ -31,7 +34,13 @@ flowchart LR
 - `eval/`: tau2 wrapper, score/trace outputs, and run metadata.
 - `infra/`: kill-switch documentation and smoke tests.
 - `artifacts/interim/`: generated interim evidence artifacts.
-- `report/interim_report.md`: structured content for the interim PDF.
+- `probes/`: Act III probe library, failure taxonomy, and target failure mode.
+- `method.md`: Act IV mechanism and ablation design.
+- `ablation_results.json`: final placeholder ablation summary (replace with sealed held-out).
+- `held_out_traces.jsonl`: final placeholder held-out traces (replace before final lock).
+- `evidence_graph.json`: claim-to-evidence mapping.
+- `report/interim_report.md`: interim PDF source.
+- `report/memo_final_pdf_ready.md`: final memo content source.
 - `baseline.md`: Act I baseline write-up (<=400 words).
 
 ## Requirements
@@ -57,6 +66,16 @@ Outputs:
 - `eval/score_log.json`
 - `eval/trace_log.jsonl`
 - `eval/run_metadata.json`
+
+## Final Evaluation Commands (Placeholder Mode)
+
+- Generate final placeholder ablation package:
+  - `python -m eval.generate_final_eval_artifacts`
+
+Outputs:
+- `ablation_results.json`
+- `held_out_traces.jsonl`
+- `eval/final_eval_metadata.json`
 
 ## Act II Commands
 
@@ -105,3 +124,6 @@ Outputs:
 ## Submission Mapping
 
 Use `artifacts/interim/submission_checklist.md` to map each interim requirement to exact files and evidence artifacts.
+
+For final submission assembly and run story:
+- `FULL_PROJECT_GUIDE.md`

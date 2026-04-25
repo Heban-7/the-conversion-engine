@@ -1,0 +1,126 @@
+{
+  "artifact_mode": "placeholder_dev_simulation",
+  "claims": [
+    {
+      "claim_id": "claim_tau2_day1_pass1",
+      "statement": "Day-1 tau2 baseline pass@1 is 0.7267 with 95% CI [0.6504, 0.7917].",
+      "sources": [
+        {
+          "type": "file",
+          "path": "eval/score_log.json",
+          "field": "pass_at_1_empirical"
+        },
+        {
+          "type": "file",
+          "path": "eval/score_log.json",
+          "field": "pass_at_1_ci_95_empirical"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_tau2_day1_cost",
+      "statement": "Average agent cost per simulation is $0.0199.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "eval/score_log.json",
+          "field": "avg_agent_cost"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_tau2_day1_latency",
+      "statement": "Day-1 baseline p50/p95 latency is 105.9521s / 551.6491s.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "eval/score_log.json",
+          "field": "p50_latency_seconds"
+        },
+        {
+          "type": "file",
+          "path": "eval/score_log.json",
+          "field": "p95_latency_seconds"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_interaction_latency_batch",
+      "statement": "Batch interaction latency from 20 interactions is p50 185.0s and p95 336.65s.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "artifacts/interim/latency_batch/latency_summary.json",
+          "field": "interaction_count"
+        },
+        {
+          "type": "file",
+          "path": "artifacts/interim/latency_batch/latency_summary.json",
+          "field": "p50_latency_seconds"
+        },
+        {
+          "type": "file",
+          "path": "artifacts/interim/latency_batch/latency_summary.json",
+          "field": "p95_latency_seconds"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_competitor_gap_generated",
+      "statement": "Competitor gap brief generated for at least one test prospect.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "artifacts/interim/single_prospect_flow/competitor_gap_brief.json",
+          "field": "prospect_domain"
+        },
+        {
+          "type": "file",
+          "path": "artifacts/interim/single_prospect_flow/competitor_gap_brief.json",
+          "field": "gap_findings"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_delta_a_placeholder",
+      "statement": "Placeholder Delta A is +0.20 with p-value 0.035015.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "ablation_results.json",
+          "field": "delta_a.pass_at_1_delta"
+        },
+        {
+          "type": "file",
+          "path": "ablation_results.json",
+          "field": "delta_a.p_value_two_sided"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim_total_project_cost_placeholder",
+      "statement": "Total placeholder project spend is $5.34.",
+      "sources": [
+        {
+          "type": "file",
+          "path": "invoice_summary.json",
+          "field": "totals.grand_total_usd"
+        },
+        {
+          "type": "file",
+          "path": "invoice_summary.json",
+          "field": "line_items"
+        }
+      ]
+    }
+  ],
+  "trace_index": {
+    "day1_trace_file": "eval/trace_log.jsonl",
+    "heldout_trace_file": "held_out_traces.jsonl",
+    "interaction_trace_file": "artifacts/interim/latency_batch/interaction_trace_log.jsonl"
+  },
+  "todo_before_final_lock": [
+    "Replace all placeholder claims with real sealed held-out and provider invoice evidence.",
+    "Add explicit trace ids for memo calculations once final runs complete."
+  ]
+}

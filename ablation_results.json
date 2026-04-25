@@ -1,0 +1,42 @@
+{
+  "artifact_mode": "placeholder_dev_simulation",
+  "note": "Replace with sealed held-out runs before final submission.",
+  "results": {
+    "day1_baseline": {
+      "pass_at_1": 0.8,
+      "ci_95": [
+        0.584,
+        0.9193
+      ],
+      "cost_per_task": 0.0201,
+      "p95_latency_seconds": 252.2396,
+      "sample_size": 20
+    },
+    "auto_opt_baseline": {
+      "pass_at_1": 0.75,
+      "ci_95": [
+        0.5313,
+        0.8881
+      ],
+      "cost_per_task": 0.0231,
+      "p95_latency_seconds": 272.4188,
+      "sample_size": 20
+    },
+    "our_method": {
+      "pass_at_1": 1.0,
+      "ci_95": [
+        0.8389,
+        1.0
+      ],
+      "cost_per_task": 0.0211,
+      "p95_latency_seconds": 234.5828,
+      "sample_size": 20
+    }
+  },
+  "delta_a": {
+    "definition": "our_method - day1_baseline",
+    "pass_at_1_delta": 0.2,
+    "p_value_two_sided": 0.035015,
+    "passes_p_lt_0_05": true
+  }
+}

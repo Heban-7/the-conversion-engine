@@ -1,0 +1,37 @@
+{
+  "artifact_mode": "placeholder_dev_simulation",
+  "currency": "USD",
+  "period": {
+    "start": "2026-04-20T00:00:00Z",
+    "end": "2026-04-25T23:59:59Z"
+  },
+  "line_items": [
+    {
+      "id": "line_dev_llm_openrouter",
+      "provider": "OpenRouter",
+      "description": "Dev-tier baseline and iterative probing",
+      "amount_usd": 2.98
+    },
+    {
+      "id": "line_eval_llm_placeholder",
+      "provider": "Eval provider (placeholder)",
+      "description": "Final placeholder ablation run generation",
+      "amount_usd": 1.62
+    },
+    {
+      "id": "line_infra_webhooks",
+      "provider": "Infra",
+      "description": "Webhook tunnel and local runtime overhead",
+      "amount_usd": 0.74
+    }
+  ],
+  "totals": {
+    "llm_spend_usd": 4.6,
+    "infra_spend_usd": 0.74,
+    "grand_total_usd": 5.34
+  },
+  "notes": [
+    "Replace placeholder lines with real provider invoices before final submission.",
+    "Tie each memo cost claim to line item ids above via evidence_graph.json."
+  ]
+}

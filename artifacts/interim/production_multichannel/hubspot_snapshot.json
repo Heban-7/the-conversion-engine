@@ -1,0 +1,11 @@
+{
+  "type": "hubspot_upsert_contact",
+  "timestamp": "2026-04-25T21:55:25.774974+00:00",
+  "payload": {
+    "email": "jordan@orrin-labs.example",
+    "company": "Orrin Labs Inc.",
+    "domain": "orrin-labs.example",
+    "segment": "abstain",
+    "tenacious_status": "draft"
+  }
+}

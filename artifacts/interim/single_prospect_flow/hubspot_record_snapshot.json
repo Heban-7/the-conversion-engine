@@ -1,6 +1,6 @@
 {
   "type": "hubspot_upsert_contact",
-  "timestamp": "2026-04-23T20:35:12.990578+00:00",
+  "timestamp": "2026-04-25T21:55:25.774642+00:00",
   "payload": {
     "email": "jordan@orrin-labs.example",
     "firstname": "Jordan",
@@ -10,6 +10,6 @@
     "segment_confidence": 0.55,
     "ai_maturity_score": 0,
     "tenacious_status": "draft",
-    "enrichment_generated_at": "2026-04-23T20:35:12.889241+00:00"
+    "enrichment_generated_at": "2026-04-25T21:55:25.634006+00:00"
   }
 }

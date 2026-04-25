@@ -81,6 +81,8 @@ Outputs:
 
 - Run one synthetic prospect end-to-end flow:
   - `python -m agent.scripts.run_single_flow`
+- Run multi-channel production integration flow (email primary, warm-SMS fallback, HubSpot, Cal.com, Langfuse):
+  - `python -m agent.scripts.run_multichannel_production`
 - Run 20-interaction latency batch:
   - `python -m agent.scripts.run_latency_batch`
 - Start inbound webhook service (email + SMS):

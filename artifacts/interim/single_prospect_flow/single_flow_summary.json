@@ -24,10 +24,10 @@
   },
   "events": [
     {
-      "correlation_id": "d5ef7ea0-c967-4348-9a4c-8f653e2b4982",
+      "correlation_id": "df94b5dc-dc90-46e9-96e7-3c8c6c27ad09",
       "channel": "email",
       "event_type": "email_send_failed",
-      "timestamp": "2026-04-23T20:35:12.986071+00:00",
+      "timestamp": "2026-04-25T21:55:25.771678+00:00",
       "payload": {
         "provider": "resend",
         "from": "research-partner@gettenacious.com",
@@ -41,29 +41,29 @@
       }
     },
     {
-      "correlation_id": "bdaf3b70-aed9-48a1-9848-8b0279025005",
+      "correlation_id": "463533b9-2d2b-4c58-a055-991b28c2048f",
       "channel": "email",
       "event_type": "email_reply_received",
-      "timestamp": "2026-04-23T20:35:12.996691+00:00",
+      "timestamp": "2026-04-25T21:55:25.777062+00:00",
       "payload": {
         "from_email": "jordan@orrin-labs.example",
         "body": "Thanks. Email is good, but SMS for scheduling is faster."
       }
     },
     {
-      "correlation_id": "ce5ffb87-dbdf-473b-a383-28789cc29fa9",
+      "correlation_id": "7aea6de9-8490-4e9a-a84c-2a9217f92aa5",
       "channel": "calcom",
       "event_type": "booking_link_generated",
-      "timestamp": "2026-04-23T20:35:13.001426+00:00",
+      "timestamp": "2026-04-25T21:55:25.778423+00:00",
       "payload": {
         "booking_link": "https://cal.example/orrin-labs.example/discovery-call"
       }
     },
     {
-      "correlation_id": "8e7910cc-1127-4684-9105-2f6817b80a5e",
+      "correlation_id": "ebf45660-2a02-4481-833e-1c8c49c2fca2",
       "channel": "sms",
       "event_type": "sms_send_failed",
-      "timestamp": "2026-04-23T20:35:13.005170+00:00",
+      "timestamp": "2026-04-25T21:55:25.779914+00:00",
       "payload": {
         "to_original": "+251711000111",
         "to_routed": "+251700000000",
@@ -73,13 +73,13 @@
       }
     },
     {
-      "correlation_id": "36675693-2cc5-4963-b014-c7f3ecd86778",
+      "correlation_id": "dbaf748b-e63b-448f-998c-9bb260eff064",
       "channel": "calcom",
       "event_type": "booking_confirmed",
-      "timestamp": "2026-04-23T20:35:13.010772+00:00",
+      "timestamp": "2026-04-25T21:55:25.782221+00:00",
       "payload": {
         "booking_link": "https://cal.example/orrin-labs.example/discovery-call",
-        "timeslot_utc": "2026-04-26T20:35:13+00:00"
+        "timeslot_utc": "2026-04-28T21:55:25+00:00"
       }
     }
   ],
